@@ -11,8 +11,8 @@ def start(message):
         types.InlineKeyboardButton("👥 Davet Et", callback_data="invite"),
         types.InlineKeyboardButton("💰 Satın Al", callback_data="buy"),
         types.InlineKeyboardButton("🏆 Leaderboard", callback_data="leaderboard"),
-        types.InlineKeyboardButton("🚀 MiniApp", url="https://t.me/AirdropTasteBot/taste"),
-        types.InlineKeyboardButton("📢 Kanal", url="https://t.me/tastenion")
+        types.InlineKeyboardButton("🚀 MiniApp", url="https://t.me/taste_launch_bot/taste"),
+        types.InlineKeyboardButton("📢Kanal", url="https://t.me/taste2025")
     )
     bot.send_message(message.chat.id, "🍕 *TASTE Bot'a Hoş Geldin!*\n\nAşağıdaki butonları kullan 👇", parse_mode="Markdown", reply_markup=markup)
 @bot.callback_query_handler(func=lambda call: True)
