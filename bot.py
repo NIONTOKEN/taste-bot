@@ -19,7 +19,8 @@ GROUP_ID = os.getenv("GROUP_ID", "@taste_miniapp")   # Topluluk grubu
 # TASTE Token bilgileri
 TASTE_CONTRACT = "EQB0beTxStmdhVri4s-cYlwYJaG_ZiR5lpLufCNC2VWUxZc-"
 STONFI_POOL = "EQCGEHrBuuoKVJ_0LqQy38F-c-pN-Jrz0M_ASdCtJxZL74nS"
-MINIAPP_URL = "https://t.me/taste_launch_bot/app"
+WEBAPP_URL = "https://incandescent-gelato-cc11a4.netlify.app"
+MINIAPP_LINK = "https://t.me/taste_launch_bot/app"
 STONFI_SWAP_URL = f"https://app.ston.fi/swap?chartVisible=false&ft=TON&tt={TASTE_CONTRACT}"
 
 bot = telebot.TeleBot(TOKEN)
@@ -78,7 +79,7 @@ def start(message):
 
     markup = types.InlineKeyboardMarkup(row_width=2)
     markup.add(
-        types.InlineKeyboardButton("🚀 Mini App Aç", url=MINIAPP_URL),
+        types.InlineKeyboardButton("🚀 Mini App Aç", web_app=types.WebAppInfo(url=WEBAPP_URL)),
         types.InlineKeyboardButton("💰 TASTE Satın Al", url=STONFI_SWAP_URL),
         types.InlineKeyboardButton("📢 Duyuru Kanalı", url="https://t.me/taste2025"),
         types.InlineKeyboardButton("💬 Topluluk", url="https://t.me/taste_miniapp"),
@@ -114,7 +115,7 @@ def buy_command(message):
     markup = types.InlineKeyboardMarkup()
     markup.add(
         types.InlineKeyboardButton("🔄 STON.fi'de Satın Al", url=STONFI_SWAP_URL),
-        types.InlineKeyboardButton("🚀 Mini App", url=MINIAPP_URL),
+        types.InlineKeyboardButton("🚀 Mini App", web_app=types.WebAppInfo(url=WEBAPP_URL)),
     )
     bot.send_message(
         message.chat.id,
@@ -273,7 +274,7 @@ def post_price_to_channel():
 
         markup = types.InlineKeyboardMarkup(row_width=2)
         markup.add(
-            types.InlineKeyboardButton("🚀 Mini App", url=MINIAPP_URL),
+            types.InlineKeyboardButton("🚀 Mini App", web_app=types.WebAppInfo(url=WEBAPP_URL)),
             types.InlineKeyboardButton("💰 Satın Al", url=STONFI_SWAP_URL),
             types.InlineKeyboardButton("💬 Topluluk", url="https://t.me/taste_miniapp"),
         )
@@ -312,7 +313,7 @@ def post_daily_report():
 
         markup = types.InlineKeyboardMarkup(row_width=2)
         markup.add(
-            types.InlineKeyboardButton("🚀 Mini App Aç", url=MINIAPP_URL),
+            types.InlineKeyboardButton("🚀 Mini App Aç", web_app=types.WebAppInfo(url=WEBAPP_URL)),
             types.InlineKeyboardButton("💰 TASTE Al", url=STONFI_SWAP_URL),
             types.InlineKeyboardButton("💬 Sohbete Katıl", url="https://t.me/taste_miniapp"),
         )
@@ -385,7 +386,7 @@ def welcome_new_member(message):
 
         markup = types.InlineKeyboardMarkup(row_width=2)
         markup.add(
-            types.InlineKeyboardButton("🚀 Mini App Aç", url=MINIAPP_URL),
+            types.InlineKeyboardButton("🚀 Mini App Aç", web_app=types.WebAppInfo(url=WEBAPP_URL)),
             types.InlineKeyboardButton("📢 Duyurular", url="https://t.me/taste2025"),
         )
 
